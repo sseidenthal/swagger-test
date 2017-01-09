@@ -1,0 +1,281 @@
+swagger: '2.0'
+info:
+  version: ''
+  title: Mobility Mobile App
+  description: Mobility Mobile App
+basePath: /v1
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /views/packages:
+    get:
+      operationId: GET_views-packages
+      summary: Packages View
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+            properties:
+              groups:
+                $ref: '#/definitions/group'
+              meta:
+                $ref: '#/definitions/meta'
+          examples:
+            application/json:
+              groups:
+                label: consectetur laborum in veniam ex
+                components:
+                  - code: tempor eiusmod enim sunt
+                    label: exercitation ullamco fugiat aute m
+                    max: 64258800
+                    size: -93348687
+                    type: cillum dolore aliquip qui magna
+                    units: Excepteur aute magna
+                    value: 83607349
+                    zone: quis deserunt exercitation
+                  - code: enim ut pariatur
+                    label: occae
+                    max: -16541785
+                    size: -19121382
+                    type: aliqua enim est in occaecat
+                    units: officia adipisicing ut reprehenderit
+                    value: -63715697
+                    zone: cupidatat magna eiusmod reprehenderit non
+                  - code: esse in laboris
+                    label: proident dolor do cillum
+                    max: 22641746
+                    size: -89748556
+                    type: minim
+                    units: sunt
+                    value: -97436975
+                    zone: sit do
+                  - code: dolore
+                    label: non d
+                    max: 26057554
+                    size: -95844689
+                    type: Duis
+                    units: Duis exercitation
+                    value: 63290511
+                    zone: sunt est adipisicing sit veniam
+                options:
+                  - label: nostr
+                    price: -34694085
+                    size: -81800257
+                    type: aliqua
+                    units: sint esse deserunt dolore
+                    zone: ad sed ut minim aliquip
+                  - label: sint enim ad consequat
+                    price: -54524672
+                    size: -16740497
+                    type: officia enim Ut id
+                    units: tempor
+                    zone: 'occaecat ut '
+                  - label: Excepteur sint in eu sed
+                    price: 8507944
+                    size: -23887423
+                    type: labore
+                    units: fugiat dolor ad
+                    zone: incididunt
+                  - label: culpa cillum
+                    price: 71437800
+                    size: -57703913
+                    type: officia
+                    units: Ut non
+                    zone: et id consectetur
+                meta:
+                  billing_cycle: aliquip pariatur sit deserunt
+                  subscription: magna
+                  type: officia sit velit
+              meta:
+                billing_cycle: Lorem officia Excepteur consectetur deserunt
+                subscription: nulla quis ex
+                type: aute
+  /views/options:
+    get:
+      operationId: GET_views-options
+      summary: Options View
+      tags:
+        - Endpoints
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: '#/definitions/meta'
+              options:
+                type: array
+                items:
+                  $ref: '#/definitions/option'
+            example:
+              meta:
+                billing_cycle: ex
+                subscription: esse anim enim quis magna
+                type: incididunt aliqua aliquip dolor esse
+              options:
+                - label: sunt pariatur mollit v
+                  price: -90457471
+                  size: 18911636
+                  type: deserunt quis eiusmod nulla aute
+                  units: ut minim quis
+                  zone: Ut consequat aliqua
+                  active: true
+                - label: ea
+                  price: 44468576
+                  size: -6686557
+                  type: ipsum ut
+                  units: ut in anim sunt sed
+                  zone: mollit Duis amet et
+                  active: false
+      responses:
+        default:
+          description: ''
+          schema: {}
+definitions:
+  component:
+    type: object
+    properties:
+      code:
+        type: string
+      label:
+        type: string
+      max:
+        type: integer
+      size:
+        type: integer
+      type:
+        type: string
+      units:
+        type: string
+      value:
+        type: integer
+      zone:
+        type: string
+    required:
+      - code
+      - label
+      - max
+      - size
+      - type
+      - units
+      - value
+      - zone
+    example:
+      code: exercitation cillum anim et
+      label: anim Excepteur
+      max: -67757415
+      size: 41148860
+      type: ex
+      units: non aliquip commodo inc
+      value: 59517375
+      zone: Ut dolor qui nulla ut
+  option:
+    type: object
+    properties:
+      label:
+        type: string
+      price:
+        type: number
+      size:
+        type: number
+      type:
+        type: string
+      units:
+        type: string
+      zone:
+        type: string
+      active:
+        type:
+          - string
+          - boolean
+    required:
+      - label
+      - price
+      - size
+      - type
+      - units
+      - zone
+      - active
+  group:
+    type: object
+    properties:
+      label:
+        type: string
+      components:
+        type: array
+        items:
+          $ref: '#/definitions/component'
+      options:
+        type: array
+        items:
+          $ref: '#/definitions/option'
+    required:
+      - label
+    example:
+      label: dolor nisi
+      components:
+        - code: sint
+          label: est ut laboris sed
+          max: -73315825
+          size: 89654688
+          type: Duis dolor aute nisi
+          units: Lorem eni
+          value: 6971702
+          zone: culpa
+        - code: esse
+          label: nulla officia
+          max: -96591573
+          size: -7723009
+          type: dolor
+          units: sit ex irure
+          value: -28392472
+          zone: labore irure pariatur sint dolor
+        - code: labore tempor
+          label: velit
+          max: 72960141
+          size: 65452552
+          type: magna
+          units: adipisicing cupidatat laboris
+          value: 68862555
+          zone: in proident veniam Excepteur
+        - code: minim
+          label: non
+          max: -35189726
+          size: -83349606
+          type: consequat et dolor dolore officia
+          units: do eu fugiat officia
+          value: 64687650
+          zone: Lorem
+      options:
+        - label: cillum enim
+          price: -51417272
+          size: 59410957
+          type: 'in '
+          units: mollit commodo enim
+          zone: 'commodo in consequat '
+      meta:
+        billing_cycle: incididunt sint reprehenderit do velit
+        subscription: consectetur mollit
+        type: in
+  meta:
+    type: object
+    properties:
+      billing_cycle:
+        type: string
+      subscription:
+        type: string
+      type:
+        type: string
+    required:
+      - billing_cycle
+      - subscription
+      - type
